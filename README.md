@@ -1,13 +1,13 @@
-# Curso de Bases de Datos
+Ôªø# Curso de Bases de Datos
 
-Repositorio con el contenido, ejercicios y guÌas pr·cticas del curso de bases de datos.
+Repositorio con el contenido, ejercicios y gu√≠as pr√°cticas del curso de bases de datos.
 
-## ?? Estructura del Repositorio
+## Estructura del Repositorio
 
-* **/Modelado**: Conceptos de diseÒo, lÛgica de negocio y diagramas.
+* **/Modelado**: Conceptos de dise√±o, l√≥gica de negocio y diagramas.
 * **/SQL**: Sintaxis, consultas, uniones (JOINs) y funciones en MySQL.
 * **/NoSQL**: Conceptos y manejo de bases de datos no relacionales.
 
-## ??? TecnologÌas Utilizadas
+## Tecnolog√≠as Utilizadas
 * MySQL / MySQL Workbench
-* Markdown para documentaciÛn
+* Markdown para documentaci√≥n
