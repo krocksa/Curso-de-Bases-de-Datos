@@ -51,4 +51,4 @@
 2. Un **cliente** hace **ventas** (1 - M)
 3. Una **venta** tiene **estados** (1 - M)
 4. Una **venta** tiene **detalles** (1 - M)
-5. Un **detalle** tiene **productos** (1 - M)
+5. Un **producto** aparece en **detalles** (1 - M)

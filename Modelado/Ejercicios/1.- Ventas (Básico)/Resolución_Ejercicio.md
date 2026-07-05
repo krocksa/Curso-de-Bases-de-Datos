@@ -1,0 +1,1 @@
+[Documento de Google Sheets con las tablas normalizadas hasta 3FN](https://docs.google.com/spreadsheets/d/14SuAOHGO8N-hwSvkixBH9sotiGQj_aJPAleP-BPwS2o/edit?usp=sharing)
