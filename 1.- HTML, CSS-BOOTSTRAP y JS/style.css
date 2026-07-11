@@ -1,3 +1,54 @@
-h1 {
+/* Antes de todo debe ir un reset,
+para que la página no tenga ningún estilo por defecto
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  /* #Del tercero no me acuerdo por ahora. */
+}
+
+#enc-1 {
+  color: blueviolet;
+  text-align: center;
+  justify-content: center;
+}
+
+#parrafo {
   color: brown;
+  text-align: center;
+  justify-content: center;
+}
+
+#list-des {
+  background-color: steelblue;
+}
+
+#list-ord {
+  background-color: cornflowerblue;
+}
+#list-des,
+#list-ord,
+#formulario {
+  border: 2px solid black;
+  margin: 10px;
+  padding: 10px;
+}
+
+#comp-list-des-enc,
+#comp-list-ord-enc {
+  color: #a5453b;
+}
+
+#comp-list-des,
+#comp-list-ord {
+  list-style-position: inside;
+  /* list-style-type: ;Esto cambia u oculta los items de los marcadores */
+}
+
+#formulario {
+  background-color: darkorchid;
+  text-align: center;
+  justify-content: center;
+  color: antiquewhite;
 }
