@@ -198,4 +198,18 @@ const manejarPeticion = (res: Response) => {
 };
 
 //9.- Narrowing
-//00:49:10
+//Refina un tipo de dato más amplio en varios más específicos
+//cada uno dentro de un condicional.
+const procesar = (valor: string | number) => {
+  if (typeof valor === "number") {
+    valor.toExponential(2);
+  } else {
+    valor.length;
+    let number: number = parseInt(valor);
+  }
+};
+procesar(1);
+//valor es un tipo de dato amplio; con el narrowing, lo pudimos
+//convertir en un tipo de dato diferente, específico y seguro
+//dentro de cada condicional.
+//54:05
