@@ -132,4 +132,70 @@ interface Usuario {
 type Rol = "Dueña" | "Admin" | "Bandid@" | "";
 
 //7.- Diferencias entre Type e Interface
-//00:35:50
+//Las interfaces trabajan con herencia (POO)
+//Las interfaces también se usan como un contrato de obligaciones
+//Los Types son mejores para tipos de datos complejos
+interface Persona {
+  nombre: string;
+  edad: number;
+  genero?: string;
+}
+
+interface Empleado extends Persona {
+  readonly rol: string; //No se puede modificar una vez definido
+  salario: number | string;
+}
+
+let empleado: Empleado = {
+  nombre: "Roger Salgado",
+  edad: 34,
+  rol: "Vice Presidente",
+  genero: "Masculino",
+  salario: "Impresionante",
+};
+
+class Humano implements Empleado {
+  rol: string = "";
+  salario: string | number = "";
+  nombre: string = "";
+  edad: number = 1;
+  genero?: string;
+}
+
+interface ArbolBinario {
+  buscar: () => void;
+}
+class ArbolBinarioPersonas implements ArbolBinario {
+  buscar() {}
+}
+
+class ArbolBinarioNumeros implements ArbolBinario {
+  buscar() {}
+}
+
+//8.- Discriminating union
+type Loading = {
+  status: "Loading";
+};
+type Success = {
+  status: "Success";
+  data: string;
+};
+type Error = {
+  status: "Error";
+  message: string;
+};
+type Response = Loading | Success | Error;
+
+const manejarPeticion = (res: Response) => {
+  if (res.status === "Loading") {
+    console.log("Cargando");
+  } else if (res.status === "Success") {
+    console.log(res.data);
+  } else {
+    console.log(res.message);
+  }
+};
+
+//9.- Narrowing
+//00:49:10
