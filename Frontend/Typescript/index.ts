@@ -236,5 +236,30 @@ const ejemplo = (x: string | null) => {
   if (x === null) return;
   console.log(x.toUpperCase());
 };
-//Type guards
-//59:05
+//10.- Type guards
+const esString = (valor: unknown): valor is string => {
+  return typeof valor === "string";
+};
+//Se asegura que el tipo de dato sea el que deseamos.
+const usar = (valor: unknown) => {
+  if (esString(valor)) {
+    console.log(valor.toUpperCase());
+  }
+};
+
+type isSuccess = { data: string };
+type isError = { error: string };
+
+const esSuccess = (res: isSuccess | isError): res is isSuccess => {
+  return "data" in res;
+};
+
+const manejar = (res: isSuccess | isError) => {
+  if (esSuccess(res)) {
+    console.log(res.data);
+  } else {
+    console.log(res.error);
+  }
+};
+
+//11.-
