@@ -247,13 +247,16 @@ const usar = (valor: unknown) => {
   }
 };
 
+//Primero definimos los tipos
 type isSuccess = { data: string };
 type isError = { error: string };
 
+//Luego nos aseguramos de que siempre sea Success
 const esSuccess = (res: isSuccess | isError): res is isSuccess => {
   return "data" in res;
 };
 
+//Finalmente manejamos los dos escenarios (Success | Error)
 const manejar = (res: isSuccess | isError) => {
   if (esSuccess(res)) {
     console.log(res.data);
@@ -262,4 +265,58 @@ const manejar = (res: isSuccess | isError) => {
   }
 };
 
-//11.-
+//11.- Literal Types
+
+//Definimos un tipo (puede ser casi que cualquiera)
+//Si le colocamos dicho tipo a una variable
+//La misma sólo puede recibir los valores
+//definidos en dicho tipo
+type Direccion = "izquierda" | "derecha";
+let mover: Direccion = "derecha";
+//Si a "mover" le intentamos pasar un valor diferente
+//a los definidos en "Direccion" el sistema arroja error.
+
+const configTema = {
+  modo: "oscuro",
+} as const;
+//as const, lo que hace es que configTema sea tratado como un tipo,
+//de esa forma su valor aparece como readonly
+//si le quitamos el as const, ya es un objeto común,
+//su valor es del tipo de dato general definido(por ejemplo: string),
+//y el mismo puede ser cambiado.
+
+//12.- Enums
+
+enum Direcciones {
+  Arriba = 1,
+  Abajo,
+  Izquierda,
+  Derecha,
+}
+let moverse: Direcciones = Direcciones.Abajo;
+console.log(moverse);
+//Nos devuelve la posición en la que está definida Arriba
+//Comenzando por el 0 como la primera posición.
+//Lo que nos crea es un array de números,
+//pero con valor semántico (Mucho más fácil de leer)
+//Existe la posibilidad de que en vez de números,
+//les definamos valores que reemplacen a dichos números,
+//puede ser con otros números, o con otros tipos de valores,
+//pero esto es más tedioso.
+
+//13.- Tipados de callback
+
+//Se tipan funciones pasándoles como parámetro otra función
+//Estas funciones que reciben funciones como parámetro,
+//Se denominan "Funciones callback".
+
+const funcionesDentroDeFunciones = (callback: (message: string) => void) => {
+  callback("Hola Mundo!");
+};
+
+funcionesDentroDeFunciones((msj) => {
+  console.log(msj);
+});
+
+//14.- Genéricos, Restricciones y keyof
+//1:11:50
